@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">WeParty</string>
+    <string name="lbl_button_CreateParty">Create Party</string>
+    <string name="lbl_button_JoinParty">Join Party</string>
+    <string name="textView_login">Login:</string>
+    <string name="textView_user">User:</string>
+    <string name="textView_password">Password:</string>
+    <string name="lbl_button_Login">Login</string>
+    <string name="textView_CreateAccount">Create Account</string>
+    <string name="textView_PartyName">Party Name:</string>
+    <string name="textView_location">Location:</string>
+    <string name="lbl_button_Create">Create</string>
+    <string name="textView_partyid">Party ID:</string>
+    <string name="lbl_button_LetsParty">Let\'s Party</string>
+    <string name="label_name">Nome:</string>
+    <string name="textVIew_userEmail">Email:</string>
+    <string name="textView_userPassword">Senha:</string>
+    <string name="textView_userRegister">Registrar</string>
+</resources>
