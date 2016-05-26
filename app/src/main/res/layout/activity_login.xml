@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/textView_user"
+        android:text="@string/textVIew_userEmail"
         android:id="@+id/textView"
         android:layout_marginTop="80dp"
         android:layout_alignParentTop="true"
@@ -22,7 +22,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText_User"
+        android:id="@+id/editText_UserEmail"
         android:layout_below="@+id/textView"
         android:width="350dp" />
 
@@ -32,7 +32,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/textView_password"
         android:id="@+id/textView2"
-        android:layout_above="@+id/editText_Password"
+        android:layout_above="@+id/editText_UserPassword"
         android:layout_alignParentStart="true" />
 
     <EditText
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText_Password"
+        android:id="@+id/editText_UserPassword"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:width="350dp" />
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:text="@string/lbl_button_Login"
         android:id="@+id/button_Login"
-        android:layout_below="@+id/editText_Password"
+        android:layout_below="@+id/editText_UserPassword"
         android:layout_alignParentEnd="true" />
 
     <TextView
