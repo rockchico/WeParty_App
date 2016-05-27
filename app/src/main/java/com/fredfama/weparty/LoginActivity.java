@@ -56,7 +56,11 @@ public class LoginActivity extends WePartyActivity {
 
                     if(jsonResponse.getJSONObject("jsonResponse").getString("success").equals("yes")) {
 
-                        text = "Login efetuado com sucesso!";
+                        WeParty_userId = jsonResponse.getJSONObject("jsonResponse").getInt("userId");
+                        WeParty_userName = jsonResponse.getJSONObject("jsonResponse").getString("userName");
+
+
+                        text = "Login efetuado com sucesso! valeu "+WeParty_userName;
                         Toast toast = Toast.makeText(context, text, duration);
                         toast.show();
 

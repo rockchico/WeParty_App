@@ -19,6 +19,47 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="com.fredfama.weparty.CreatePartyActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.fredfama.weparty.JoinPartyActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.fredfama.weparty.MainActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.fredfama.weparty.PartyPhotosActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.fredfama.weparty.PartyPlaylistActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.fredfama.weparty.PartyPollActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.fredfama.weparty.PartySongsActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.fredfama.weparty.PhotoManagementActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.fredfama.weparty.SongManagementActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.fredfama.weparty.UserRegistrationActivity"
+            android:label="@string/app_name" />
+
+
     </application>
 
 </manifest>

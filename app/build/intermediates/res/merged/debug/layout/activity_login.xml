@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/textView_user"
+        android:text="@string/textVIew_userEmail"
         android:id="@+id/textView"
         android:layout_marginTop="80dp"
         android:layout_alignParentTop="true"

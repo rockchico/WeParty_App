@@ -10,7 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 public class WePartyActivity extends AppCompatActivity {
 
     protected int WeParty_partyId;
+    protected String WeParty_partyName;
     protected int WeParty_userId;
+    protected String WeParty_userName;
+    protected String WeParty_userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

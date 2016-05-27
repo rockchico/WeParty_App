@@ -1,5 +1,6 @@
 package com.fredfama.weparty;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -37,21 +38,28 @@ public class MainActivity extends WePartyActivity {
         button_createParty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-
+                startCreatePartyActivity();
             }
         });
 
         button_joinParty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startJointPartyActivity();
             }
         });
 
-
-
-
     }
+
+    private void startCreatePartyActivity() {
+        Intent intent = new Intent(this, CreatePartyActivity.class);
+        startActivity(intent);
+    }
+
+    private void startJointPartyActivity() {
+        Intent intent = new Intent(this, JoinPartyActivity.class);
+        startActivity(intent);
+    }
+
+
 }
