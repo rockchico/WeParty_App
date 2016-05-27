@@ -42,9 +42,13 @@ public class UserRegistrationActivity extends WePartyActivity {
 
                 try {
 
+                    String userName = editText_UserName.getText().toString().trim();
+                    String userEmail = editText_UserEmail.getText().toString().toLowerCase().trim();
+
+
                     JSONObject jsonPost = new JSONObject();
-                    jsonPost.put("userName", editText_UserName.getText());
-                    jsonPost.put("userEmail",   editText_UserEmail.getText());
+                    jsonPost.put("userName", userName);
+                    jsonPost.put("userEmail",   userEmail);
                     jsonPost.put("userPassword", editText_UserPassword.getText());
 
 
@@ -61,16 +65,22 @@ public class UserRegistrationActivity extends WePartyActivity {
                     if(jsonResponse.getJSONObject("jsonResponse").getString("success").equals("yes")) {
 
                         WeParty_userId = jsonResponse.getJSONObject("jsonResponse").getInt("lastInsertId");
+                        WeParty_userName = userName;
+                        WeParty_userEmail = userEmail;
+
                         Log.i("WeParty_userId: ", Integer.toString(WeParty_userId));
 
                         text = "Usuário cadastrado com sucesso!";
                         Toast toast = Toast.makeText(context, text, duration);
                         toast.show();
 
+                        startLoginActivity();
+
 
                     } else {
 
-                        text = "Não foi possível cadastrar o usuário!";
+                        String info = jsonResponse.getJSONObject("jsonResponse").getString("info");
+                        text = "Não foi possível cadastrar o usuário, "+info;
                         Toast toast = Toast.makeText(context, text, duration);
                         toast.show();
 
@@ -89,4 +99,13 @@ public class UserRegistrationActivity extends WePartyActivity {
 
 
     }
+
+
+    private void startLoginActivity() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+
+
 }

@@ -1,6 +1,7 @@
 package com.fredfama.weparty;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +31,15 @@ public class LoginActivity extends WePartyActivity {
         editText_UserEmail = (EditText) findViewById(R.id.editText_UserEmail);
         editText_UserPassword = (EditText) findViewById(R.id.editText_UserPassword);
 
+
+        if(!WeParty_userName.equals("")) {
+
+            Log.i("sim WeParty_userName: ", WeParty_userName);
+
+        } else {
+            Log.i("nao WeParty_userName: ", "");
+        }
+
         button_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,8 +50,8 @@ public class LoginActivity extends WePartyActivity {
                 try {
 
                     JSONObject jsonPost = new JSONObject();
-                    jsonPost.put("userEmail",   editText_UserEmail.getText());
-                    jsonPost.put("userPassword", editText_UserPassword.getText());
+                    jsonPost.put("userEmail",   editText_UserEmail.getText().toString().toLowerCase().trim());
+                    jsonPost.put("userPassword", editText_UserPassword.getText().toString());
 
 
                     // envia um post contendo o json e obtem resposta
@@ -64,6 +74,8 @@ public class LoginActivity extends WePartyActivity {
                         Toast toast = Toast.makeText(context, text, duration);
                         toast.show();
 
+                        startMainActivity();
+
 
                     } else {
 
@@ -82,6 +94,25 @@ public class LoginActivity extends WePartyActivity {
             }
         });
 
+        textView_CreateAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startUserRegistrationActivity();
 
+
+            }
+        });
+
+
+    }
+
+    private void startMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void startUserRegistrationActivity() {
+        Intent intent = new Intent(this, UserRegistrationActivity.class);
+        startActivity(intent);
     }
 }
