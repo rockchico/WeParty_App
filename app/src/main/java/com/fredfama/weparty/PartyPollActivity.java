@@ -3,7 +3,7 @@ package com.fredfama.weparty;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class PartyPollActivity extends AppCompatActivity {
+public class PartyPollActivity extends WePartyActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
