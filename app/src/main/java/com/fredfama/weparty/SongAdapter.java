@@ -24,10 +24,15 @@ class SongAdapter extends ArrayAdapter<Song> {
 
     public SongAdapter(Context context, int textViewResourceId, ArrayList<Song> songList) {
         super(context, textViewResourceId, songList);
+
         this.context = context;
         this.layoutResourceId = textViewResourceId;
         this.songList = new ArrayList<Song>();
         this.songList.addAll(songList);
+    }
+
+    public ArrayList<Song> getSongList() {
+        return this.songList;
     }
 
     private class ViewHolder {
@@ -58,10 +63,7 @@ class SongAdapter extends ArrayAdapter<Song> {
                 public void onClick(View v) {
                     CheckBox cb = (CheckBox) v ;
                     Song song = (Song) cb.getTag();
-                    Toast.makeText(context,
-                            "Clicked on Checkbox: " + cb.getText() +
-                                    " is " + cb.isChecked(),
-                            Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "Clicked on Checkbox: " + cb.getText() + " is " + cb.isChecked(), Toast.LENGTH_LONG).show();
                     song.setSelected(cb.isChecked());
                 }
             });

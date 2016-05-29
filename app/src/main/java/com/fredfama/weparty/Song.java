@@ -14,7 +14,7 @@ public class Song {
         super();
         this.uuid = uuid;
         this.name = name;
-        this.name = path;
+        this.path = path;
         this.selected = selected;
     }
 

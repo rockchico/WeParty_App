@@ -10,10 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -30,6 +35,9 @@ public class SongManagementActivity extends WePartyActivity {
     private String mp3Pattern = ".mp3";
 
     ListView listView_songs;
+    Button button_findSelected;
+
+    SongAdapter songAdapter = null;
 
 
     @Override
@@ -37,14 +45,15 @@ public class SongManagementActivity extends WePartyActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song_management);
 
+        button_findSelected = (Button) findViewById(R.id.button_FindSelected);
+
+        // obtem a lista de musicas armazenadas no cartao sd
         getPlayList();
 
         Log.i("SongManagementActivity SONG LIST SIZE: ", String.valueOf(songsList.size()));
 
 
-
-
-        listView_songs = (ListView) findViewById(R.id.listVIew_songs);
+        listView_songs = (ListView) findViewById(R.id.listView_songs);
 
         //ArrayList<Song> opcoes = new ArrayList<String>();
 
@@ -54,13 +63,8 @@ public class SongManagementActivity extends WePartyActivity {
 
         }
 
-        //opcoes.add("Navegar na Internet");
-        //opcoes.add("Fazer uma ligação");
-        //opcoes.add("Sobre");
-        //opcoes.add("Sair");
-
-        SongAdapter adaptador = new SongAdapter(SongManagementActivity.this, android.R.layout.simple_list_item_1, songsList);
-        listView_songs.setAdapter(adaptador);
+        songAdapter = new SongAdapter(SongManagementActivity.this, android.R.layout.simple_list_item_1, songsList);
+        listView_songs.setAdapter(songAdapter);
         listView_songs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -71,11 +75,57 @@ public class SongManagementActivity extends WePartyActivity {
 
                 Song s = (Song) parent.getItemAtPosition(position);
 
-                text = "Musica = "+s.getName();
+                text = "Musica = " + s.getName();
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
 
 
+            }
+        });
+
+        button_findSelected.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                JSONObject jsonResponse;
+
+                try {
+
+                    ArrayList<Song> songList = songAdapter.getSongList();
+
+                    JSONArray ja = new JSONArray();
+                    JSONObject jo = new JSONObject();
+                    for(int i = 0; i < songList.size();i++){
+                        Song song = songList.get(i);
+                        if(song.isSelected()){
+                            //responseText.append("\n" + country.getName());
+                            jo.put("songUuid", song.getUuid());
+                            jo.put("songName", song.getName());
+                            jo.put("songPath", song.getPath());
+                            ja.put(jo);
+                        }
+                    }
+
+
+
+                    JSONObject jsonPost = new JSONObject();
+                    //jsonPost.put("partyId", WeParty_partyId);
+                    jsonPost.put("partySongs", ja);
+
+
+                    // envia um post contendo o json e obtem resposta
+                    jsonResponse = WebServiceJSON.post("parties/savesongs", jsonPost);
+
+                    Log.i("parties/savesongs: ", jsonResponse.toString());
+
+
+                    //startSongManagementActivity();
+
+
+                } catch (JSONException e) {
+                    Log.i("opa", "JSONException");
+                    e.printStackTrace();
+                }
             }
         });
 

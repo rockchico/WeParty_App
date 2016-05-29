@@ -9,14 +9,19 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SongManagementActivity">
 
+    <Button
+        android:id="@+id/button_FindSelected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Find countries that are Selected" />
 
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listVIew_songs"
+        android:id="@+id/listView_songs"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:layout_below="@+id/button_FindSelected" />
 
 </RelativeLayout>
