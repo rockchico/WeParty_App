@@ -1,5 +1,6 @@
 package com.fredfama.weparty;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,17 +28,19 @@ public class CreatePartyActivity extends WePartyActivity {
         editText_PartyLocation = (EditText) findViewById(R.id.editText_PartyLocation);
 
 
+        Log.i("CreateParty WeParty_userId: ", Integer.toString(WeParty_userId));
+        Log.i("CreateParty WeParty_userName: ", WeParty_userName);
+        Log.i("CreateParty WeParty_userEmail: ", WeParty_userEmail);
+
+
         button_create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
 
                 JSONObject jsonResponse;
 
                 try {
 
-
-                    //WeParty_userId = 1;
 
                     JSONObject jsonPost = new JSONObject();
                     jsonPost.put("partyName", editText_PartyName.getText());
@@ -54,6 +57,8 @@ public class CreatePartyActivity extends WePartyActivity {
 
                     Log.i("WeParty_partyId: ", Integer.toString(WeParty_partyId));
 
+                    startSongManagementActivity();
+
 
                 } catch (JSONException e) {
                     Log.i("opa", "JSONException");
@@ -65,4 +70,12 @@ public class CreatePartyActivity extends WePartyActivity {
 
 
     }
+
+
+    private void startSongManagementActivity() {
+        Intent intent = new Intent(this, SongManagementActivity.class);
+        startActivity(intent);
+    }
+
+
 }

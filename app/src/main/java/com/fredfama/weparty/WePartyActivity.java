@@ -9,11 +9,11 @@ import android.support.v7.app.AppCompatActivity;
  */
 public class WePartyActivity extends AppCompatActivity {
 
-    protected int WeParty_partyId = 0;
-    protected String WeParty_partyName = "";
-    protected int WeParty_userId = 0;
-    protected String WeParty_userName = "";
-    protected String WeParty_userEmail = "";
+    protected static int WeParty_partyId = 0;
+    protected static String WeParty_partyName = "";
+    protected static int WeParty_userId = 0;
+    protected static String WeParty_userName = "";
+    protected static String WeParty_userEmail = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

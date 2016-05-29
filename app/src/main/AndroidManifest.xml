@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme">
 
         <!--  -->
-        <activity android:name=".LoginActivity">
+        <activity android:name=".SongManagementActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -52,7 +52,7 @@
             android:label="@string/app_name" />
 
         <activity
-            android:name="com.fredfama.weparty.SongManagementActivity"
+            android:name="com.fredfama.weparty.LoginActivity"
             android:label="@string/app_name" />
 
         <activity

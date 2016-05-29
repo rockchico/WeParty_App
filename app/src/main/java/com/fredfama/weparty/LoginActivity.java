@@ -68,6 +68,7 @@ public class LoginActivity extends WePartyActivity {
 
                         WeParty_userId = jsonResponse.getJSONObject("jsonResponse").getInt("userId");
                         WeParty_userName = jsonResponse.getJSONObject("jsonResponse").getString("userName");
+                        WeParty_userEmail = jsonResponse.getJSONObject("jsonResponse").getString("userEmail");
 
 
                         text = "Login efetuado com sucesso! valeu "+WeParty_userName;

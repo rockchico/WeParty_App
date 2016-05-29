@@ -68,8 +68,6 @@ public class UserRegistrationActivity extends WePartyActivity {
                         WeParty_userName = userName;
                         WeParty_userEmail = userEmail;
 
-                        Log.i("WeParty_userId: ", Integer.toString(WeParty_userId));
-
                         text = "Usuário cadastrado com sucesso!";
                         Toast toast = Toast.makeText(context, text, duration);
                         toast.show();

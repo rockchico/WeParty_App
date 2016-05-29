@@ -164,6 +164,10 @@
         "source": "/home/chico/Documentos/AndroidStudioProjects/WeParty/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_expanded_menu_layout.xml"
     },
     {
+        "merged": "/home/chico/Documentos/AndroidStudioProjects/WeParty/app/build/intermediates/res/merged/debug/layout/song_info.xml",
+        "source": "/home/chico/Documentos/AndroidStudioProjects/WeParty/app/src/main/res/layout/song_info.xml"
+    },
+    {
         "merged": "/home/chico/Documentos/AndroidStudioProjects/WeParty/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
         "source": "/home/chico/Documentos/AndroidStudioProjects/WeParty/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_screen_content_include.xml"
     },

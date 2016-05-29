@@ -18,7 +18,7 @@
         android:theme="@style/AppTheme" >
 
         <!--  -->
-        <activity android:name="com.fredfama.weparty.LoginActivity" >
+        <activity android:name="com.fredfama.weparty.SongManagementActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,7 +50,7 @@
             android:name="com.fredfama.weparty.PhotoManagementActivity"
             android:label="@string/app_name" />
         <activity
-            android:name="com.fredfama.weparty.SongManagementActivity"
+            android:name="com.fredfama.weparty.LoginActivity"
             android:label="@string/app_name" />
         <activity
             android:name="com.fredfama.weparty.UserRegistrationActivity"
