@@ -16,4 +16,8 @@
     <string name="textVIew_userEmail">Email:</string>
     <string name="textView_userPassword">Senha:</string>
     <string name="textView_userRegister">Registrar</string>
+
+    <string name="app_name5">My Application</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 </resources>

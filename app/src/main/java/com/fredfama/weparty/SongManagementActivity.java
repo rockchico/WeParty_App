@@ -94,14 +94,17 @@ public class SongManagementActivity extends WePartyActivity {
                     ArrayList<Song> songList = songAdapter.getSongList();
 
                     JSONArray ja = new JSONArray();
-                    JSONObject jo = new JSONObject();
+                    JSONObject jo;
                     for(int i = 0; i < songList.size();i++){
                         Song song = songList.get(i);
                         if(song.isSelected()){
                             //responseText.append("\n" + country.getName());
+                            jo = new JSONObject();
                             jo.put("songUuid", song.getUuid());
                             jo.put("songName", song.getName());
                             jo.put("songPath", song.getPath());
+                            jo.put("songPartyId", 10);
+
                             ja.put(jo);
                         }
                     }
@@ -111,10 +114,11 @@ public class SongManagementActivity extends WePartyActivity {
                     JSONObject jsonPost = new JSONObject();
                     //jsonPost.put("partyId", WeParty_partyId);
                     jsonPost.put("partySongs", ja);
+                    Log.d("songsarray: ", jsonPost.toString());
 
 
                     // envia um post contendo o json e obtem resposta
-                    jsonResponse = WebServiceJSON.post("parties/savesongs", jsonPost);
+                    jsonResponse = WebServiceJSON.post("songs/save", jsonPost);
 
                     Log.i("parties/savesongs: ", jsonResponse.toString());
 

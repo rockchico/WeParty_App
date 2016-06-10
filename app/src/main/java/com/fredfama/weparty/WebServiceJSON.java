@@ -24,9 +24,9 @@ public class WebServiceJSON {
     private static Request request;
     private static Response response = null;
 
-    private static String baseURL = "http://10.1.0.10/we_party/";
-
-
+    //private static String baseURL = "http://10.1.0.10/we_party/";
+    //private static String baseURL = "http://52.33.125.110:5673/";
+    private static String baseURL = "http://192.168.43.30/we_party/";
 
 
     // TODO: POST JSONOBJECT, http://stackoverflow.com/questions/34179922/okhttp-post-body-as-json

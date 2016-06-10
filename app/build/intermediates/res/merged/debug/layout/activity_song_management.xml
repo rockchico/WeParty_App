@@ -13,7 +13,7 @@
         android:id="@+id/button_FindSelected"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Find countries that are Selected" />
+        android:text="Add songs" />
 
 
     <ListView

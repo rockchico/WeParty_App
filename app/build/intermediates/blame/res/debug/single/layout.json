@@ -194,5 +194,9 @@
     {
         "merged": "/home/chico/Documentos/AndroidStudioProjects/WeParty/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
         "source": "/home/chico/Documentos/AndroidStudioProjects/WeParty/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/home/chico/Documentos/AndroidStudioProjects/WeParty/app/build/intermediates/res/merged/debug/layout/activity_player_management.xml",
+        "source": "/home/chico/Documentos/AndroidStudioProjects/WeParty/app/src/main/res/layout/activity_player_management.xml"
     }
 ]
